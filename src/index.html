@@ -3,21 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="Description" content="Code pour le TP1 de INF8808.">
-        <title>INF8808 Project</title>
+        <meta name="Description" content="Code pour le projet de INF8808.">
+        <title>Projet | INF8808</title>
 
         <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="assets/typography.css">
 
       </head>
 
       <body>
         <header>
-
+          <h1>
+            Analyse de la performance de l'équipe nationale du Maroc 
+          </h1>
+          <h2>
+            Coupe du Monde au Qatar, 2022
+          </h2>
         </header>
         <main>
-          <img></img>
+          <div class="viz-container">
+            <div class="graph" id="heatmap">
+              <svg class="heatmap-svg"></svg>
+            </div>
+          </div>
         </main>
         <script src="https://d3js.org/d3.v7.js"></script>
         <script type="module" src="index.js"></script>
       </body>
+
+      
 </html>

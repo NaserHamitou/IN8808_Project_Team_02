@@ -1,7 +1,8 @@
 body {
-    font-family: 'Arial', 'sans-serif';
+    font-family: 'Roboto Slab', 'sans-serif';
     font-size: 16px;
-    color: #362023;
+    background-color: #fff;
+    color: #2A2B2E;
     margin: 0;
     height: 100vh;
     display: flex;
@@ -10,13 +11,60 @@ body {
 }
 
 header {
+    background-color: #fff;
     padding: 25px 100px;
-    text-align: center;
+    border-bottom: 2px solid #97939A;
 }
 
 main {
     height: 100%;
     padding-right: 25px;
+}
+
+h1 {
+    color: #2A2B2E;
+    font-family: 'Roboto Slab', 'serif';
+    font-size: 56px;
+    margin: 0;
+    font-weight: normal;
+}
+
+h2 {
+    color: #2A2B2E;
+    font-family: 'Roboto Slab', 'serif';
+    font-weight: normal;
+}
+
+svg {
+    background-color: #ffffff;
+}
+
+button {
+    padding: 10px 30px;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: 0;
+    font-family: 'Helvetica', 'sans-serif';
+    font-size: 16px;
+}
+
+button:hover, button:active {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+
+.title, .axis-text {
+    transform-origin: center;
+    transform-box: fill-box;
+    text-anchor: middle;
+}
+
+.viz-container{
+    height: 100%;
+    padding: 0 100px;
 }
 
 .graph {
@@ -27,54 +75,21 @@ main {
     align-items: center;
 }
 
-svg {
-    background-color: #ffffff;
-}
-
-.d3-tip {
-    line-height: 1;
-    font-weight: bold;
-    padding: 12px;
-    background: rgba(54, 32, 35, 0.8);
-    color: #fff;
-    border-radius: 2px;
-    pointer-events: none;
+.tick line{
+    visibility: hidden;
   }
 
-h1 {
-    font-family: 'Times', 'serif';
-    font-size: 56px;
-    margin: 0;
-    font-weight: normal;
-}
+  .info {
+      pointer-events: none;
+      font-family: 'Roboto';
+  }
 
-h2 {
-    font-weight: normal;
-}
+  .axis text {
+      font-family: 'Roboto';
+      cursor: default;
+      
+  }
 
-
-.axis-text {
-    transform-origin: center;
-    transform-box: fill-box;
-    text-anchor: middle;
-}
-
-.button {
-    cursor: pointer;
-}
-
-.button-text {
-    pointer-events: none;
-}
-
-.tooltip-value {
-    font-weight: normal;
-}
-
-.axis path, .axis line {
-    stroke : #362023;
-}
-
-.axis text {
-    fill : #362023;
-}
+  .axis path {
+      opacity: 0;
+  }
