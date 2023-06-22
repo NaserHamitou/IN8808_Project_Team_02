@@ -1,9 +1,9 @@
 'use strict'
 
-import * as helper from './scripts/helper.js'
-import * as viz from './scripts/viz.js'
-import * as legend from './scripts/legend.js'
-import * as hover from './scripts/hover.js'
+import * as helper from './scripts/viz4-performance/helper.js'
+import * as viz from './scripts/viz4-performance/viz.js'
+import * as legend from './scripts/viz4-performance/legend.js'
+import * as hover from './scripts/viz4-performance/hover.js'
 import * as d3Chromatic from 'd3-scale-chromatic'
 
 /**
