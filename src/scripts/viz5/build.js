@@ -22,7 +22,7 @@ export function build() {
       const width = 400;
       const height = 400;
       const radius = Math.min(width, height) / 2;
-      const margin = { top: 35, right: 300, bottom: 35, left: 300 }
+      const margin = { top: 50, right: 300, bottom: 50, left: 300 }
 
 
 
@@ -45,7 +45,7 @@ export function build() {
 viz.drawAreaLines(formattedData, svg, valueScale, radius, width, height);
 
 
-
+viz.drawRadarPath(formattedData, svg, valueScale, radius, width, height);
 
 
 
