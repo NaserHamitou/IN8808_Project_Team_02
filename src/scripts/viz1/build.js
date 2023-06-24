@@ -1,5 +1,5 @@
 import * as viz from './viz_1.js'
-var width = 600
+var width = 1000
 var height = 400
 
 /**

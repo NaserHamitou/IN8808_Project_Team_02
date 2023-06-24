@@ -6,21 +6,53 @@
         <link rel="stylesheet" href="assets/style.css">
         <link rel="stylesheet" href="assets/typography.css">
         <title>INF8808E - Team 02</title>
+       
+        <style>
+          header {
+            background-image: url('.\assets\images\morocco.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: auto;
+            min-height: 600px; /* Adjust the minimum height as desired */
+          }
+          
+          header::after {
+            content: "";
+            background: inherit;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            filter: blur(10px); /* Adjust the blur value as desired */
+          }
+          
+          header h1,
+          header h2 {
+            color: white;
+            text-align: center;
+          }
+        </style>
     </head>
     <body>
       <header>
-        <h1>
-          Performance de l'équipe nationale du Maroc : Analyse Statistique 
-        </h1>
-        <h2>
-          Coupe du Monde 2022
-        </h2>
+        <div class="content"><div class="welcome-title">L'équipe nationale du Maroc: La gloire d'une nation</div></div>
+        
       </header>
 
       <main>
-
-        <div class="viz1-container"></div>
-
+        <div class="page-container">
+          <div >
+            <h2 class="markdown-title ">Comparaison des résultats des quatres équipes demi-finalistes</h2>
+          </div> 
+          <div >
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On peut remarquer que le Maroc a obtenu des résultats relativement similaires à ceux de l'Argentine, de la France et de la Croatie en termes de victoires et de défaites</p>
+          </div>
+          
+          <div class="viz1-container"></div>
+        </div>
         <div class="viz4-container">
           <div class="viz4-graph"><svg class="viz4-svg"></svg></div>
         </div>
