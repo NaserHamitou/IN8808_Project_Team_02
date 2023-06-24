@@ -43,8 +43,8 @@ export function build () {
       bounds = d3.select('.viz2-graph').node().getBoundingClientRect()
     
       svgSize = {
-        width: bounds.width - 800,
-        height: 650  // increase the SVG height to 650 or a value that suits your design
+        width: bounds.width - 500,
+        height: 700  // increase the SVG height to 650 or a value that suits your design
       }
     
       graphSize = {

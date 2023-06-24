@@ -16,3 +16,4 @@ export function draw (data, color) {
     .append("span").style("padding-left", "10px").text(function(d){ return d === 'Buts' ? 'Marqués' : 'Encaissés '})
 
 }
+
