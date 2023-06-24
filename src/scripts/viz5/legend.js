@@ -6,8 +6,12 @@ export function drawLegend() {
   
     const svgContainer = d3.select('.viz5-container');
   
+    // insert a div and center it and align it to the top of the container
     const legendContainer = svgContainer.insert('div', ':first-child')
-      .attr('class', 'legend-container');
+      .attr('class', 'legend-container')
+      .style('text-align', 'center')
+      .style('margin-top', '20px');
+      
   
     const legend = legendContainer.append('svg')
       .attr('class', 'legend-svg')
@@ -19,6 +23,7 @@ export function drawLegend() {
       .enter()
       .append('g')
       .attr('class', 'legend')
+      
       .attr('transform', function (d, i) {
         return 'translate(' + (i * 200) + ', 0)';
       });
