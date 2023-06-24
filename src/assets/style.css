@@ -61,3 +61,9 @@ h2 {
   .axis path {
       opacity: 0;
   }
+
+ .viz1-container {
+    width: 600px;
+    height: 400px;
+    margin: auto;
+  }
