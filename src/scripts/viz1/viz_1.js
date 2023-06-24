@@ -1,5 +1,5 @@
 // Dimensions du graphique
-var width = 500
+var width = 900
 var height = 400
 
 // Marge du graphique
@@ -46,7 +46,7 @@ function createYScale () {
 function createColorScale () {
   return d3.scaleOrdinal()
     .domain(['Victoires', 'Nul', 'Défaites'])
-    .range(['green', 'yellow', 'red'])
+    .range(['#20c997', '#F3DFA5', 'red'])
 }
 
 // Fonction pour créer les barres empilées
@@ -58,16 +58,16 @@ function createColorScale () {
  * @param data
  * @returns {*}
  */
-function createStackedBars (svg, xScale, yScale, colorScale, data) {
+function createStackedBars(svg, xScale, yScale, colorScale, data) {
   var graph = svg.append('g')
-    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
   var stackedBars = graph.selectAll('.stacked-bar')
     .data(data)
     .enter()
     .append('g')
     .attr('class', 'stacked-bar')
-    .attr('transform', function (d) { return 'translate(' + xScale(d.Équipe) + ',0)' })
+    .attr('transform', function (d) { return 'translate(' + xScale(d.Équipe) + ',0)'; });
 
   stackedBars.selectAll('rect')
     .data(function (d) {
@@ -75,29 +75,32 @@ function createStackedBars (svg, xScale, yScale, colorScale, data) {
         { type: 'Défaites', value: d.D + d.N + d.V },
         { type: 'Nul', value: d.N + d.V },
         { type: 'Victoires', value: d.V }
-      ]
+      ];
     })
     .enter()
     .append('rect')
     .attr('x', 0)
-    .attr('y', function (d) { return yScale(d.value) })
+    .attr('y', function (d) { return yScale(d.value); })
     .attr('width', xScale.bandwidth())
-    .attr('height', function (d) { return graphHeight - yScale(d.value) })
-    .attr('fill', function (d) { return colorScale(d.type) })
+    .attr('height', function (d) { return graphHeight - yScale(d.value); })
+    .attr('fill', function (d) { return colorScale(d.type); });
 
-  return graph
+  return graph;
 }
+
 
 // Fonction pour ajouter l'axe des abscisses
 /**
  * @param graph
  * @param xScale
  */
-function addXAxis (graph, xScale) {
+function addXAxis(graph, xScale) {
   graph.append('g')
     .attr('class', 'x-axis')
     .attr('transform', 'translate(0,' + graphHeight + ')')
     .call(d3.axisBottom(xScale))
+    .selectAll('text')
+    .style('font-size', '14px'); // Changer la taille de la police ici
 }
 
 // Fonction pour ajouter l'axe des ordonnées
