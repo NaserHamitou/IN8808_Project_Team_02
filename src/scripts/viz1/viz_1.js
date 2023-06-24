@@ -1,3 +1,5 @@
+import * as tip from './tooltip'
+
 // Dimensions du graphique
 var width = 900
 var height = 400
@@ -23,7 +25,8 @@ function convertData (data) {
  * @returns {*}
  */
 function createXScale (data) {
-  return d3.scaleBand()
+  return d3
+    .scaleBand()
     .domain(data.map(function (d) { return d.Équipe }))
     .range([0, graphWidth])
     .padding(0.2)
@@ -31,7 +34,7 @@ function createXScale (data) {
 
 // Fonction pour créer l'échelle en axe des ordonnées
 /**
- *@returns {*}
+ * @returns {*}
  */
 function createYScale () {
   return d3.scaleLinear()
@@ -41,7 +44,7 @@ function createYScale () {
 
 // Fonction pour créer l'échelle des couleurs
 /**
- *@returns {*}
+ * @returns {*}
  */
 function createColorScale () {
   return d3.scaleOrdinal()
@@ -49,58 +52,63 @@ function createColorScale () {
     .range(['#20c997', '#F3DFA5', 'red'])
 }
 
-// Fonction pour créer les barres empilées
 /**
  * @param svg
  * @param xScale
  * @param yScale
  * @param colorScale
  * @param data
- * @returns {*}
  */
-function createStackedBars(svg, xScale, yScale, colorScale, data) {
+function createStackedBars (svg, xScale, yScale, colorScale, data) {
   var graph = svg.append('g')
-    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+
+  // Préparation des données pour l'empilement
+  var stackedData = d3.stack()
+    .keys(['V', 'N', 'D']) // Les clés correspondent aux propriétés dans votre jeu de données
+    .value(function (d, key) { return d[key] })
+    (data)
 
   var stackedBars = graph.selectAll('.stacked-bar')
-    .data(data)
+    .data(stackedData)
     .enter()
     .append('g')
     .attr('class', 'stacked-bar')
-    .attr('transform', function (d) { return 'translate(' + xScale(d.Équipe) + ',0)'; });
+    .attr('fill', function (d) { return colorScale(d.key) }) // Utiliser la couleur en fonction de la clé
 
   stackedBars.selectAll('rect')
-    .data(function (d) {
-      return [
-        { type: 'Défaites', value: d.D + d.N + d.V },
-        { type: 'Nul', value: d.N + d.V },
-        { type: 'Victoires', value: d.V }
-      ];
-    })
+    .data(function (d) { return d })
     .enter()
     .append('rect')
-    .attr('x', 0)
-    .attr('y', function (d) { return yScale(d.value); })
+    .attr('x', function (d) { return xScale(d.data.Équipe) })
+    .attr('y', function (d) { return yScale(d[1]) }) // Utiliser la position du sommet de la barre
     .attr('width', xScale.bandwidth())
-    .attr('height', function (d) { return graphHeight - yScale(d.value); })
-    .attr('fill', function (d) { return colorScale(d.type); });
+    .attr('height', function (d) { return yScale(d[0]) - yScale(d[1]) }) // Utiliser la différence de position pour déterminer la hauteur
+    .on('mouseover', function (d, event) {
+      tip.show(d, event)
+    })
+    .on('mouseout', function () {
+      tip.hide()
+    })
+    .on('mousemove', function () {
+      tip.update(d3.event)
+    })
 
-  return graph;
+  return graph
 }
-
 
 // Fonction pour ajouter l'axe des abscisses
 /**
  * @param graph
  * @param xScale
  */
-function addXAxis(graph, xScale) {
+function addXAxis (graph, xScale) {
   graph.append('g')
     .attr('class', 'x-axis')
     .attr('transform', 'translate(0,' + graphHeight + ')')
     .call(d3.axisBottom(xScale))
     .selectAll('text')
-    .style('font-size', '14px'); // Changer la taille de la police ici
+    .style('font-size', '14px') // Changer la taille de la police ici
 }
 
 // Fonction pour ajouter l'axe des ordonnées
@@ -124,8 +132,10 @@ function addLegend (svg, colorScale) {
     .attr('class', 'legend')
     .attr('transform', 'translate(' + (margin.left + graphWidth - 10) + ',' + margin.top + ')')
 
+  var domain = colorScale.domain().slice(0, 3); // Utiliser seulement les 3 premières valeurs du domaine
+
   legend.selectAll('.legend-item')
-    .data(colorScale.domain())
+    .data(domain)
     .enter()
     .append('g')
     .attr('class', 'legend-item')
@@ -144,7 +154,6 @@ function addLegend (svg, colorScale) {
         .text(d)
     })
 }
-
 // Fonction principale de création du graphique
 /**
  * @param svg
@@ -163,3 +172,6 @@ export function createGraph (svg, data) {
   addYAxis(graph, yScale)
   addLegend(svg, colorScale)
 }
+
+// Initialize the tooltip
+tip.initialize()
