@@ -18,6 +18,7 @@ export function drawCircles(height, width, ticks, svg, valueScale, tickLabels) {
   });
 }
 
+
 // export function drawRadarPath(data, svg, valueScale, radius) {
 //     // Filter the data for "Total Maroc" and "Total Adversaire"
 

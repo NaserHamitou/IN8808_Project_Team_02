@@ -19,10 +19,14 @@ export function build() {
         Cmp: parseFloat(d["Cmp%"].replace(",", ".")),
       }));
 
-      const width = 400;
-      const height = 400;
+      const margin = { top: 35, right: 100, bottom: 35, left: 350 }
+      const width = 700
+      const height = 550
+
+    //   const width = 400;
+    //   const height = 400;
       const radius = Math.min(width, height) / 2;
-      const margin = { top: 50, right: 300, bottom: 50, left: 300 }
+    //   const margin = { top: 150, right: 300, bottom: 150, left: 300 }
 
 
 
@@ -35,6 +39,7 @@ export function build() {
       const tickLabels = ["0", "25", "50", "75", "100"];
 
       // Draw the circles to represent percentages
+      legend.drawLegend();
       viz.drawCircles(height, width, ticks, svg, valueScale, tickLabels);
     
       // Extract the data values for the first data point
@@ -46,7 +51,6 @@ viz.drawAreaLines(formattedData, svg, valueScale, radius, width, height);
 
 
 viz.drawRadarPath(formattedData, svg, valueScale, radius, width, height);
-
 
 
       // Create a function to generate the radar path
