@@ -10,7 +10,7 @@ import d3Tip from 'd3-tip'
 export function build () {
 (function (d3) {
   const margin = { top: 80, right: 0, bottom: 80, left: 55 }
-  const barColors = ['#861388', '#d4a0a7']
+  const barColors = ['#007AFF', '#FF2E2E']
 
   let bounds
   let svgSize
