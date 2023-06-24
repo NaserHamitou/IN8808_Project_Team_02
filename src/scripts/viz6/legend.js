@@ -1,6 +1,6 @@
-var width = 500
-var margin = { top: 50, right: 20, bottom: 50, left: 50 }
-var graphWidth = width - margin.left - margin.right
+var width = 300
+var margin = { top: 50, right: 70, bottom: 50, left: 100}
+var graphWidth = width - margin.left - margin.right + 150
 
 /**
  * @param svg
@@ -9,7 +9,7 @@ var graphWidth = width - margin.left - margin.right
 export function drawLegend (svg, colorScale) {
   var legend = svg.append('g')
     .attr('class', 'legend')
-    .attr('transform', 'translate(' + (margin.left + graphWidth - 10) + ',' + (margin.top + 20) + ')')
+    .attr('transform', 'translate(' + (margin.left + graphWidth - 10 ) + ',' + (margin.top + 20) + ')')
 
   legend.selectAll('.legend-item')
     .data(colorScale.domain())

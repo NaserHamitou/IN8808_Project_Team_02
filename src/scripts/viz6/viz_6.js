@@ -7,7 +7,7 @@ export function updateXScale (scale, data, width) {
   const joueurs = data.map(d => { return d.Joueur })
   scale.domain(joueurs)
     .range([0, width])
-    .padding([0.05])
+    .padding([0.55])
 }
 
 /**
@@ -46,7 +46,7 @@ export function drawBars (data, color, x, y, svg) {
     .data(data)
     .enter()
     .append('g')
-    .attr('transform', d => `translate(${x(d.Joueur)},0)`) // Shift the position of each bar group
+    .attr('transform', d => `translate(${x(d.Joueur) - 10})`) // Shift the position of each bar group
     .selectAll('rect')
     .data(function (d) {
       return subgroups.map(function (key) { return { key: key, value: d[key] } })
