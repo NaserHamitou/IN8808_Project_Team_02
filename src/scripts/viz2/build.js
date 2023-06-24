@@ -1,6 +1,6 @@
 'use strict'
 
-import * as viz from './viz.js'
+import * as viz from './viz_2.js'
 import * as helper from './helper.js'
 import * as legend from './legend.js'
 import * as tooltip from './tooltip.js'
