@@ -18,8 +18,8 @@ export function build () {
     const height = 450
 
     const colorScale = d3.scaleOrdinal()
-      .domain(['Buts', 'Passes décisives', 'Passes clés'])
-      .range(['blue', 'red', 'orange'])
+      .domain(['Passes clés','Passes décisives','Buts'])
+      .range([ 'orange','red', 'blue'])
 
     const barColors = [
       '#FAD02C',
