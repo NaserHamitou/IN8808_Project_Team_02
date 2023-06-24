@@ -6,7 +6,7 @@
  * @returns {*} The d3 Selection for the created g element
  */
 export function generateG (margin) {
-  return d3.select('.graph')
+  return d3.select('.viz4-graph')
     .select('svg')
     .append('g')
     .attr('id', 'graph-g')
@@ -21,7 +21,7 @@ export function generateG (margin) {
  * @param {number} height The desired height
  */
 export function setCanvasSize (width, height) {
-  d3.select('#heatmap').select('svg')
+  d3.select('.viz4-graph').select('svg')
     .attr('width', width)
     .attr('height', height)
 }
