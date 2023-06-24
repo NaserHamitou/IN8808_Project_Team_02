@@ -16,7 +16,7 @@ export function drawLegend (svg, colorScale) {
     .enter()
     .append('g')
     .attr('class', 'legend-item')
-    .attr('transform', function (d, i) { return 'translate(' + i * 80 + ', 0)' })
+    .attr('transform', function (d, i) { return 'translate(' + i * 200 + ', 0)' })
     .each(function (d) {
       var item = d3.select(this)
       item.append('rect')
