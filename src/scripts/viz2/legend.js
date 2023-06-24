@@ -6,6 +6,8 @@ export function draw (data, color) {
       .attr("class", "legend-element")
       .style("display", "flex")
       .style("flex-direction", "row")
+      // .style("align-items", "center")
+      // .style("justify-content", "center")
   )
 
   d3.selectAll(".legend-element").data(data)
@@ -16,3 +18,4 @@ export function draw (data, color) {
     .append("span").style("padding-left", "10px").text(function(d){ return d === 'Buts' ? 'Marqués' : 'Encaissés '})
 
 }
+
