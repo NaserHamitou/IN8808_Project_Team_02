@@ -4,7 +4,7 @@
  * @param {*} colorScale The color scale to use
  */
 export function initGradient (colorScale) {
-  const svg = d3.select('.heatmap-svg')
+  const svg = d3.select('.viz4-svg')
   const defs = svg.append('defs')
 
   const linearGradient = defs
@@ -27,7 +27,7 @@ export function initGradient (colorScale) {
  * Initializes the SVG rectangle for the legend.
  */
 export function initLegendBar () {
-  const svg = d3.select('.heatmap-svg')
+  const svg = d3.select('.viz4-svg')
   svg.append('rect').attr('class', 'legend bar')
 }
 
@@ -35,7 +35,7 @@ export function initLegendBar () {
  *  Initializes the group for the legend's axis.
  */
 export function initLegendAxis () {
-  const svg = d3.select('.heatmap-svg')
+  const svg = d3.select('.viz4-svg')
   svg
     .append('g')
     .attr('class', 'legend axis')
