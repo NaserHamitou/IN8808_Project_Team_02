@@ -9,7 +9,58 @@
   <link rel="stylesheet" href="assets/typography.css">
   <link rel="stylesheet" href="assets/tooltip.css">
   <title>INF8808E - Team 02</title>
+  <style>
+    header {
+      background-image: url('.\assets\images\morocco.webp');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      height: auto;
+      min-height: 600px;
+      /* Adjust the minimum height as desired */
+    }
 
+    header::after {
+      content: "";
+      background: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      filter: blur(10px);
+      /* Adjust the blur value as desired */
+    }
+
+    header h1,
+    header h2 {
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="content">
+      <div class="welcome-title">L'équipe nationale du Maroc: La gloire d'une nation</div>
+    </div>
+
+  </header>
+<main>
+  <div class="page-container">
+    <div>
+      <h2 class="markdown-title ">Comment le Maroc se compare aux autres équipes demi-finalistes en terme de résultats
+        ?</h2>
+    </div>
+    <div>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous pouvons remarquer que le Maroc a obtenu des résultats
+        relativement similaires à ceux de l'Argentine, de la France et de la Croatie en termes de victoires et de
+        défaites</p>
+    </div>
+
+    <div class="viz1-container"></div>
+  </div>
         <div class="page-container">
           <div >
             <h2 class="markdown-title ">Comment le Maroc s'est comporté sur le terrain en terme de discipline ?</h2>
@@ -103,3 +154,5 @@
 </body>
 
 </html>
+
+
