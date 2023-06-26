@@ -6,7 +6,6 @@ export function initialize () {
   d3.select('body')
     .append('div')
     .attr('class', 'tooltip')
-    .attr('font-family', 'Roboto Slab')
     .style('position', 'absolute')
     .style('pointer-events', 'none')
     .style('opacity', 0)
@@ -16,10 +15,15 @@ export function initialize () {
  * @param data
  * @param event
  */
-export function show (data, event) {
-  return getContents(event) 
-    // .style('left', event.pageX + 'px')
-    // .style('top', event.pageY + 'px')
+export function show (event, data) {
+  const tooltip = d3.select('.tooltip')
+  const contents = getContents(data)
+
+  tooltip
+    .html(contents)
+    .style('left', event.pageX + 'px')
+    .style('top', event.pageY + 'px')
+    .style('opacity', 1)
 }
 
 /**
@@ -44,12 +48,29 @@ export function update (event) {
  * @param data
  */
 export function getContents (data) {
-  console.log(data.data.Équipe)
+  const team = data.data.Équipe
+  const scoreDifference = data[1] - data[0]
+  let resultType = ''
 
+  if (data[0] === 0) {
+    if (data[1] === 1) {
+      resultType = 'Victoire'
+    } else {
+      resultType = 'Victoires'
+    }
+  } else if (data[1] === 7) {
+    if (data[1] - data[0] === 1) {
+      resultType = 'Défaite'
+    } else {
+      resultType = 'Défaites'
+    }
+  } else {
+    resultType = 'Matchs nuls'
+  }
 
-  var contents = `<div >${data.data.Équipe}</div>`
+  var contents = `<div id="tooltip-title">${team}</div>`
   contents += '<p></p>'
-  contents += `<div > ${data[1] - data[0]} lines </div>`
+  contents += `<div class="tooltip-value"> <div>${scoreDifference} ${resultType}  </div>`
 
   return contents
 }

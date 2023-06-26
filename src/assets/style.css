@@ -156,3 +156,27 @@ main {
     justify-content: center;
     align-items: center;
   }
+
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    background-color:black;
+    color: whitesmoke;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    z-index: 9999;
+  }
+
+  #tooltip-title {
+    font-family: 'Grenze Gotisch';
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.tooltip-value {
+    font-weight: normal;
+}
