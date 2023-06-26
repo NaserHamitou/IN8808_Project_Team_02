@@ -3,8 +3,8 @@
  */
 export function drawLegend () {
   const legendData = [
-    { label: 'Carton rouge', color: 'red' },
-    { label: 'Carton jaune', color: 'yellow' }
+    { label: 'Carton rouge', color: '#c72527' },
+    { label: 'Carton jaune', color: '#d7b442' }
   ]
 
   const svg = d3.select('.viz3-svg')

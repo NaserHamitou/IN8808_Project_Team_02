@@ -11,8 +11,8 @@ export function build () {
     const height = 550
 
     const barColors = [
-      '#007AFF',
-      '#FF2E2E'
+      '#3c906c',
+      '#c72527'
     ]
 
     const yScale = d3.scaleBand() 

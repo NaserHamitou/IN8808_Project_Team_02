@@ -13,7 +13,6 @@ body {
 header {
     background-color: #fff;
     padding: 25px 100px;
-    border-bottom: 2px solid #97939A;
 }
 
 main {
@@ -21,19 +20,6 @@ main {
     padding-right: 25px;
 }
 
-h1 {
-    color: #2A2B2E;
-    font-family: 'Roboto Slab', 'serif';
-    font-size: 40px;
-    margin: 0;
-    font-weight: normal;
-}
-
-h2 {
-    color: #2A2B2E;
-    font-family: 'Roboto Slab', 'serif';
-    font-weight: normal;
-}
 
 .viz4-container{
     height: 100%;
@@ -126,8 +112,6 @@ h2 {
     padding: 20px;
 }
 
-
-
   :root {
     --blue: #43A1D5;
     --gold: #D5B048;
@@ -143,12 +127,10 @@ h2 {
 
 
 .welcome-title {
-    color: white;
-    font-family: 'Oswald';
-    font-size: 3.5rem;
-    position: inherit;
-    /* bottom: 3rem; */
-    left: 2rem; 
+    color: var(--navy_blue);
+    font-family: 'Roboto Slab';
+    margin-top: 74vh;
+    font-size: 50px;
 }
 
 .page-container {
@@ -156,8 +138,15 @@ h2 {
 }
 
 .markdown-title {
-    font-family: 'Oswald';
+    font-family: 'Roboto Slab';
+    font-size: 27px;
     color: var(--navy_blue);
+}
+
+.text {
+    font-family: 'Roboto Slab', 'serif';
+    color: #595959;
+    font-size: 15px;
 }
 
 .viz7-container {

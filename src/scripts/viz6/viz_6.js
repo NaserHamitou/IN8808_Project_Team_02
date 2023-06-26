@@ -30,9 +30,9 @@ export function unpdateYScale (scale, data, height) {
 export function drawBars (data, color, x, y, svg) {
   // Map each subgroup to a specific color
   const colorMapping = {
-    Buts: 'blue',
-    PD: 'red',
-    PC: 'orange'
+    Buts: '#3c906c',
+    PD: '#c72527',
+    PC: '#d7b442'
   }
 
   const subgroups = data.columns.slice(1)

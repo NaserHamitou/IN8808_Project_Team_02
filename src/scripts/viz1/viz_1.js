@@ -49,7 +49,7 @@ function createYScale () {
 function createColorScale () {
   return d3.scaleOrdinal()
     .domain(['Victoires', 'Nul', 'Défaites'])
-    .range(['#20c997', '#F3DFA5', 'red'])
+    .range(['#3c906c', '#d7b442', '#c72527'])
 }
 
 /**
@@ -108,7 +108,8 @@ function addXAxis (graph, xScale) {
     .attr('transform', 'translate(0,' + graphHeight + ')')
     .call(d3.axisBottom(xScale))
     .selectAll('text')
-    .style('font-size', '14px') // Changer la taille de la police ici
+    .attr('font-family', 'Roboto Slab')
+    .attr('font-size', '12px') // Changer la taille de la police ici
 }
 
 // Fonction pour ajouter l'axe des ordonnées
@@ -119,6 +120,8 @@ function addXAxis (graph, xScale) {
 function addYAxis (graph, yScale) {
   graph.append('g')
     .attr('class', 'y-axis')
+    .attr('font-family', 'Roboto Slab')
+    .attr('font-size', '12px')
     .call(d3.axisLeft(yScale))
 }
 
@@ -139,6 +142,8 @@ function addLegend (svg, colorScale) {
     .enter()
     .append('g')
     .attr('class', 'legend-item')
+    .attr('font-family', 'Roboto Slab')
+    .attr('font-size', '12px')
     .attr('transform', function (d, i) { return 'translate(0,' + i * 20 + ')' })
     .each(function (d) {
       var item = d3.select(this)

@@ -1,7 +1,7 @@
 export function drawLegend () {
   const legendData = [
-    { label: 'Buts', color: '#007AFF' },
-    { label: 'Tirs', color: '#FF2E2E' }
+    { label: 'Buts', color: '#3c906c' },
+    { label: 'Tirs', color: '#c72527' }
   ]
 
   const svg = d3.select('.viz7-svg')

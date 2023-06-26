@@ -18,8 +18,8 @@ export function build () {
     const height = 450
 
     const colorScale = d3.scaleOrdinal()
-      .domain(['Passes clés','Passes décisives','Buts'])
-      .range([ 'orange','red', 'blue'])
+      .domain(['Passes clés', 'Passes décisives', 'Buts'])
+      .range(['#d7b442', '#c72527', '#3c906c'])
 
     const barColors = [
       '#FAD02C',
@@ -62,7 +62,6 @@ export function build () {
         .range(barColors)
 
       viz.drawBars(data, color, xScale, yScale, svg)
-
 
       legend.drawLegend(svg, colorScale)
     })

@@ -6,6 +6,7 @@ export function initialize () {
   d3.select('body')
     .append('div')
     .attr('class', 'tooltip')
+    .attr('font-family', 'Roboto Slab')
     .style('position', 'absolute')
     .style('pointer-events', 'none')
     .style('opacity', 0)
