@@ -13,7 +13,7 @@ import * as legend from './legend'
  */
 export function build () {
   (function (d3) {
-    const margin = { top: 35, right: 100, bottom: 200, left: 50 } // increase bottom margin for rotated labels
+    const margin = { top: 35, right: 100, bottom: 200, left: 50 }
     const width = 1300
     const height = 480
 
@@ -29,7 +29,6 @@ export function build () {
     const xScale = d3.scaleBand()
     const yScale = d3.scaleLinear()
 
-    // SVG
     const svg = helper.generateSVG(width, height, margin)
 
     d3.csv('./Offensif.csv').then(function (data) {
@@ -41,18 +40,17 @@ export function build () {
       svg.append('g')
         .attr('transform', 'translate(0,' + height + ')')
         .call(d3.axisBottom(xScale).tickSizeOuter(0))
-        .selectAll('text') // select all the text elements for the xaxis
-        .attr('transform', 'translate(-10,10)rotate(-45)') // rotate the text
+        .selectAll('text')
+        .attr('transform', 'translate(-10,10)rotate(-45)')
         .style('text-anchor', 'end')
         .style('font-size', '14px')
         .style('text-anchor', 'end')
 
-      // Add title for the x-axis
       svg.append('text')
-        .attr('transform', `translate(${width / 2}, ${height + margin.top + 100})`) // add more space in the y direction
+        .attr('transform', `translate(${width / 2}, ${height + margin.top + 100})`)
         .style('text-anchor', 'middle')
         .style('font-size', '16px')
-        .text('Joueur') // set the title text
+        .text('Joueur')
 
       svg.append('g')
         .call(d3.axisLeft(yScale).ticks(5))

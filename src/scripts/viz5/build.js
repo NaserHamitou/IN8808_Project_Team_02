@@ -15,8 +15,8 @@ export function build () {
     d3.csv('./Métriques.csv').then(function (data) {
       const formattedData = data.map((d) => ({
         Equipe: d['Équipe'],
-        Arrets: parseFloat(d['Arrets%'].replace(',', '.')),
-        Gagnes: parseFloat(d['% gagnés'].replace(',', '.')),
+        Arrêts: parseFloat(d['Arrets%'].replace(',', '.')),
+        Gagnés: parseFloat(d['% gagnés'].replace(',', '.')),
         Tcl: parseFloat(d['Tcl%'].replace(',', '.')),
         Possession: parseFloat(d.Possession.replace(',', '.')),
         Cmp: parseFloat(d['Cmp%'].replace(',', '.'))

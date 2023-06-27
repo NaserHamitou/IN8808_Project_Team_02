@@ -103,7 +103,6 @@ export function drawAreaLines (data, svg, valueScale, radius, width, height) {
         label_coord: angleToCoordinate(angle, radius + 35)
       }
     })
-  console.log(featureData)
 
   svg
     .selectAll('line')

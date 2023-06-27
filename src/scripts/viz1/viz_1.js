@@ -6,9 +6,6 @@ const margin = { top: 50, right: 20, bottom: 50, left: 50 }
 const graphWidth = width - margin.left - margin.right
 const graphHeight = height - margin.top - margin.bottom
 
-const xAxisTitle = 'Équipes' // Update with the desired x-axis title
-const yAxisTitle = 'Nombre de matchs' // Update with the desired y-axis title
-
 /**
  * @param data
  */
@@ -22,6 +19,7 @@ function convertData (data) {
 
 /**
  * @param data
+ * @returns {*}
  */
 function createXScale (data) {
   return d3
@@ -32,14 +30,14 @@ function createXScale (data) {
 }
 
 /**
- *
+ * @returns {*}
  */
 function createYScale () {
   return d3.scaleLinear().domain([0, 8]).range([graphHeight, 0])
 }
 
 /**
- *
+ *  @returns{*}
  */
 function createColorScale () {
   return d3
@@ -54,6 +52,7 @@ function createColorScale () {
  * @param yScale
  * @param colorScale
  * @param data
+ * @returns {*}
  */
 function createStackedBars (svg, xScale, yScale, colorScale, data) {
   const graph = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`)
@@ -98,6 +97,8 @@ function createStackedBars (svg, xScale, yScale, colorScale, data) {
  * @param xScale
  */
 function addXAxis (graph, xScale) {
+  const xAxisTitle = 'Équipes'
+
   graph
     .append('g')
     .attr('class', 'x-axis')
@@ -121,6 +122,7 @@ function addXAxis (graph, xScale) {
  * @param yScale
  */
 function addYAxis (graph, yScale) {
+  const yAxisTitle = 'Nombre de matchs'
   graph
     .append('g')
     .attr('class', 'y-axis')

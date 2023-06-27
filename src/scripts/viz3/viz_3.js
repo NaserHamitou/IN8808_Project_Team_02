@@ -7,7 +7,6 @@ import * as tip from './tooltip'
  */
 export function updateXScale (scale, data, width) {
   const equipes = data.map(d => { return d.Equipe })
-  console.log(equipes)
   scale.domain(equipes)
     .range([0, width])
     .padding([0.2])
