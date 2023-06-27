@@ -12,7 +12,7 @@ import d3Tip from 'd3-tip'
  */
 export function build () {
   (function (d3) {
-    const margin = { top: 80, right: 0, bottom: 80, left: 55 }
+    const margin = { top: 10, right: 0, bottom: 0, left: 55 }
     const barColors = ['#3c906c', '#c72527']
 
     let bounds
@@ -39,10 +39,7 @@ export function build () {
       legend.draw(['Buts', 'Total adversaire'], color)
 
       setSizing()
-      build/**
-            *
-            */
-      (data, teamNames)
+      build(data, teamNames)
 
       function setSizing () {
         bounds = d3.select('.viz2-graph').node().getBoundingClientRect()

@@ -1,18 +1,36 @@
 import * as tip from './tooltip'
 
+/**
+ * @param scale
+ * @param data
+ * @param width
+ */
 export function updateXScale (scale, data, width) {
   const max = d3.max(data, d => d3.sum(Object.values(d).slice(1)))
   scale.domain([0, max])
     .range([0, width])
 }
 
-export function updateYScale (scale, data, height) {
-  const joueurs = data.map(d => d.Joueur)
+/**
+ * @param scale
+ * @param data
+ * @param height
+ */
+export function updateYScale(scale, data, height) {
+  const joueurs = data.map(d => d.Joueur);
   scale.domain(joueurs)
     .range([0, height])
-    .padding([0.2])
+    .padding([0.2]);
 }
 
+
+/**
+ * @param data
+ * @param color
+ * @param x
+ * @param y
+ * @param svg
+ */
 export function drawBars (data, color, x, y, svg) {
   const subgroups = data.columns.slice(1)
   const stackedData = d3.stack().keys(subgroups)(data)

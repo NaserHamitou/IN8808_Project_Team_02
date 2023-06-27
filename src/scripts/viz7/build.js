@@ -4,6 +4,9 @@ import * as viz from './viz_7'
 import * as helper from './helper'
 import * as legend from './legend'
 
+/**
+ *
+ */
 export function build () {
   (function (d3) {
     const margin = { top: 35, right: 100, bottom: 35, left: 150 }
@@ -15,7 +18,7 @@ export function build () {
       '#c72527'
     ]
 
-    const yScale = d3.scaleBand() 
+    const yScale = d3.scaleBand()
     const xScale = d3.scaleLinear()
 
     const svg = helper.generateSVG(width, height, margin)
@@ -27,7 +30,7 @@ export function build () {
       viz.updateXScale(xScale, data, width)
 
       svg.append('g')
-      .attr('height', 20)
+        .attr('height', 20)
         .attr('transform', 'translate(0,' + height + ')')
         .call(d3.axisBottom(xScale).tickSizeOuter(10))
 

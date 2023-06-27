@@ -157,7 +157,7 @@ main {
     align-items: center;
   }
 
-  .tooltip {
+.tooltip {
     position: absolute;
     pointer-events: none;
     opacity: 0;
@@ -166,13 +166,13 @@ main {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Slab', 'serif';
     font-size: 12px;
     z-index: 9999;
   }
 
-  #tooltip-title {
-    font-family: 'Grenze Gotisch';
+#tooltip-title {
+    font-family: 'Roboto Slab', 'serif';
     font-weight: normal;
     font-size: 24px;
 }

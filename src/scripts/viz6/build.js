@@ -13,9 +13,9 @@ import * as legend from './legend'
  */
 export function build () {
   (function (d3) {
-    const margin = { top: 35, right: 100, bottom: 400, left: 50 } // increase bottom margin for rotated labels
+    const margin = { top: 35, right: 100, bottom: 200, left: 50 } // increase bottom margin for rotated labels
     const width = 1300
-    const height = 450
+    const height = 480
 
     const colorScale = d3.scaleOrdinal()
       .domain(['Passes clés', 'Passes décisives', 'Buts'])
