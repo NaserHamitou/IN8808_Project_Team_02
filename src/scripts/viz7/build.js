@@ -9,9 +9,9 @@ import * as legend from './legend'
  */
 export function build () {
   (function (d3) {
-    const margin = { top: 35, right: 100, bottom: 35, left: 150 }
+    const margin = { top: 35, right: 100, bottom: 50, left: 150 }
     const width = 700
-    const height = 550
+    const height = 600
 
     const barColors = [
       '#3c906c',
@@ -41,7 +41,7 @@ export function build () {
         .domain(subgroups)
         .range(barColors)
 
-      viz.drawBars(data, color, xScale, yScale, svg)
+      viz.drawBars(data, color, xScale, yScale, svg,width-10,height,margin)
     })
 
     legend.drawLegend()
