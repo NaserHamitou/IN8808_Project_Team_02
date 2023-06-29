@@ -1,3 +1,4 @@
+import * as d3 from 'd3';
 /**
  * @param scale
  * @param data
@@ -40,6 +41,8 @@ export function drawBars (data, color, x, y, svg) {
     .range([0, x.bandwidth()])
     .padding([0.1])
 
+  const tooltip = d3.select(".viz6-tooltip");
+
   svg.append('g')
     .selectAll('g')
     .data(data)
@@ -56,4 +59,17 @@ export function drawBars (data, color, x, y, svg) {
     .attr('width', xSubgroup.bandwidth())
     .attr('height', d => y(0) - y(d.value))
     .attr('fill', d => colorMapping[d.key])
+    .on("mouseover", function(event, d) {      
+      tooltip.transition()        
+          .duration(200)      
+          .style("opacity", .9);      
+      tooltip.html(`${d.key}: ${d.value}`)  
+          .style("left", (event.pageX) + "px")     
+          .style("top", (event.pageY - 28) + "px");    
+    })                  
+    .on("mouseout", function(event, d) {       
+      tooltip.transition()        
+          .duration(500)      
+          .style("opacity", 0);   
+    });
 }
