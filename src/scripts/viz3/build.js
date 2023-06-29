@@ -14,8 +14,8 @@ export function build () {
     const height = 550
 
     const barColors = [
-      '#FAD02C',
-      '#FF0000'
+      '#d7b442',
+      '#c72527'
     ]
 
     const xScale = d3.scaleBand()
@@ -28,7 +28,7 @@ export function build () {
       const subgroups = data.columns.slice(1)
 
       viz.updateXScale(xScale, data, width)
-      viz.unpdateYScale(yScale, data, height)
+      viz.updateYScale(yScale, data, height)
 
       svg.append('g')
         .attr('height', 20)
@@ -42,7 +42,7 @@ export function build () {
         .domain(subgroups)
         .range(barColors)
 
-      viz.drawBars(data, color, xScale, yScale, svg)
+      viz.drawBars(data, color, xScale, yScale, svg,width-10,height,margin)
     })
 
     legend.drawLegend()

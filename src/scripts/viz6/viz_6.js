@@ -1,3 +1,4 @@
+import * as d3 from 'd3';
 /**
  * @param scale
  * @param data
@@ -28,25 +29,26 @@ export function unpdateYScale (scale, data, height) {
  * @param svg
  */
 export function drawBars (data, color, x, y, svg) {
-  // Map each subgroup to a specific color
   const colorMapping = {
-    Buts: 'blue',
-    PD: 'red',
-    PC: 'orange'
+    Buts: '#3c906c',
+    PD: '#c72527',
+    PC: '#d7b442'
   }
 
   const subgroups = data.columns.slice(1)
   const xSubgroup = d3.scaleBand()
     .domain(subgroups)
     .range([0, x.bandwidth()])
-    .padding([0.1]) // This makes sure there's a little space between each bar
+    .padding([0.1])
+
+  const tooltip = d3.select(".viz6-tooltip");
 
   svg.append('g')
     .selectAll('g')
     .data(data)
     .enter()
     .append('g')
-    .attr('transform', d => `translate(${x(d.Joueur) - 10})`) // Shift the position of each bar group
+    .attr('transform', d => `translate(${x(d.Joueur) - 10})`) 
     .selectAll('rect')
     .data(function (d) {
       return subgroups.map(function (key) { return { key: key, value: d[key] } })
@@ -57,4 +59,17 @@ export function drawBars (data, color, x, y, svg) {
     .attr('width', xSubgroup.bandwidth())
     .attr('height', d => y(0) - y(d.value))
     .attr('fill', d => colorMapping[d.key])
+    .on("mouseover", function(event, d) {      
+      tooltip.transition()        
+          .duration(200)      
+          .style("opacity", .9);      
+      tooltip.html(`${d.key}: ${d.value}`)  
+          .style("left", (event.pageX) + "px")     
+          .style("top", (event.pageY - 28) + "px");    
+    })                  
+    .on("mouseout", function(event, d) {       
+      tooltip.transition()        
+          .duration(500)      
+          .style("opacity", 0);   
+    });
 }

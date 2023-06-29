@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -9,146 +8,98 @@
   <link rel="stylesheet" href="./assets/typography.css">
   <link rel="stylesheet" href="./assets/tooltip.css">
   <title>INF8808E - Team 02</title>
-
-  <style>
-    header {
-      background-image: url('.\assets\images\morocco.webp');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      height: auto;
-      min-height: 600px;
-      /* Adjust the minimum height as desired */
-    }
-
-    header::after {
-      content: "";
-      background: inherit;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-      filter: blur(10px);
-      /* Adjust the blur value as desired */
-    }
-
-    header h1,
-    header h2 {
-      color: white;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
-  <header>
-    <div class="content">
-      <div class="welcome-title">L'équipe nationale du Maroc: La gloire d'une nation</div>
+  <header class="header">
+    <div>
+      <div class="welcome-title">Équipe Nationale du Maroc, la Gloire d'une Nation - Analyse Statistique de la Coupe du Monde 2022</div>
     </div>
-
   </header>
 
   <main>
     <div class="page-container">
       <div>
-        <h2 class="markdown-title ">Comment le Maroc se compare aux autres équipes demi-finalistes en terme de résultats
-          ?</h2>
+        <h2 class="markdown-title">Comment le Maroc a-t-il Performé en terme de résultats&nbsp;?</h2>
       </div>
       <div>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous pouvons remarquer que le Maroc a obtenu des résultats
-          relativement similaires à ceux de l'Argentine, de la France et de la Croatie en termes de victoires et de
-          défaites</p>
+        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous pouvons remarquer que le Maroc a obtenu des résultats relativement similaires aux autres demi-finalistes (Argentine, France et Croatie) en termes de victoires et de défaites.</p>
       </div>
-
       <div class="viz1-container"></div>
     </div>
 
-    <div class="graph-container">
-      <div class="graph" id="graph"></div>
-    </div>
-        <div class="page-container">
-          <div >
-            <h2 class="markdown-title ">Comment le Maroc s'est comporté sur le terrain en terme de discipline ?</h2>
-          </div> 
-          <div >
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Malgré le carton rouge recu par l'équipe du Maroc, nous pouvons remarquer que l'équipe d'Argentine est celle ayant recue le plus de sanctions disciplinaires (cartons jaunes et rouges)</p>
-          </div>
-          
-          <div class="viz3-container"></div>
-        </div>
-
-      
-        <div class="page-container">
-          <div >
-            <h2 class="markdown-title ">Comment le Maroc a performé dans chaque match ?</h2>
-          </div> 
-          <div >
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Malgré le faible pourcentage de possession tout au long du tournoi, les Lions de l'Atlas sont restés consistants et ont su se battre contre les géants du football mondial. Nous pouvons remarquer que le taux de passes réussies est un facteur significatif au succès du Maroc. En effet, l'équipe a su gardé un taux particulièrement élevé durant toute la compétition.   </p>
-          </div>
-          
-          <div class="viz4-container">
-          <div class="viz4-graph"><svg class="viz4-svg"></svg></div>
-          </div>
-        </div>
-
-    </div>
-
-    <!-- viz 2 starts here -->
-
-    <div>
-      <div class="page-container">
-        <div>
-          <h2 class="markdown-title ">À quel point la défense du Maroc est solide ?</h2>
-        </div>
-        <div>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Malgré un nombre inférieur de buts marqués par rapport à ses
-            adversaires (6 buts), l'équipe nationale du Maroc a démontré une solide performance défensive lors de la
-            Coupe du Monde 2022, en encaissant seulement 4 buts. Le différentiel de buts positif (+2) témoigne de la
-            réussite de l'équipe à maintenir une balance favorable, malgré un nombre moins élevé de buts marqués. Cette
-            performance met en évidence une équipe marocaine résiliente et stratégiquement axée sur la défense.</p>
-        </div>
+    <div class="page-container">
+      <div>
+        <h2 class="markdown-title">Comment le Maroc s'est Comporté Sur le Terrain&nbsp;?</h2>
       </div>
-      <div class="viz2-legend-container">
-        <div class='viz2-legend'></div>
+      <div>
+        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Malgré le carton rouge reçu par l'équipe du Maroc, nous pouvons remarquer que l'équipe d'Argentine est celle ayant reçu le plus de sanctions disciplinaires (cartons jaunes et rouges combinés).</p>
       </div>
-      <div class="viz2-main">
-        <div class="viz2-container">
-          <div class="viz2-graph" id="viz2-bar-chart">
-            <svg class="viz2-main-svg"></svg>
-          </div>
-        </div>
-      </div>
-
+      <div class="viz3-container"></div>
     </div>
 
     <div class="page-container">
-      <div >
-        <h2 class="markdown-title ">Quelles étaient les forces et faiblesses de l'équipe marocaine face à ses adversaires ?</h2>
-      </div> 
-      <div >
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On peut remarquer que le Maroc se démarque en moyenne face à ses adversaires en terme
-          de possession de balle, de duels aériens gagnés et de passes réussies </p>
+      <div>
+        <h2 class="markdown-title">Comment le Maroc a-t-il performé dans chaque match&nbsp;?</h2>
       </div>
-      
-      <div class="viz5-container">
+      <div>
+        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Malgré le faible pourcentage de possession tout au long du tournoi, les Lions de l'Atlas sont restés consistants et ont su se battre contre les géants du football mondial. Nous pouvons remarquer que le taux de passes réussies est un facteur significatif au succès du Maroc. En effet, l'équipe a su garder un taux particulièrement élevé durant toute la compétition.</p>
       </div>
+      <div class="viz4-container">
+        <div class="viz4-graph"><svg class="viz4-svg"></svg></div>
       </div>
     </div>
 
     <div class="page-container">
       <div>
-        <h2 class="markdown-title ">Qui sont les joueurs ayant le plus contribués offensivement ?</h2>
+        <h2 class="markdown-title">La défense du Maroc, a-t-elle été solide&nbsp;?</h2>
       </div>
       <div>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nous pouvons facilement observer quels joueurs ont été les moteurs
-          de l'attaque marocaine lors de la Coupe du Monde. Nous en déduisons que Hakim Ziyech, Achraf Hakimi et
-          Azzedine Ounahi sont les joueurs ayant contribué le plus offensivement. </p>
+        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Malgré un nombre inférieur de buts marqués par rapport à ses adversaires (6 buts), l'équipe nationale du Maroc a démontré une solide performance défensive lors de la Coupe du Monde 2022, en encaissant seulement 4 buts. Le différentiel de buts positifs (+2) témoigne de la réussite de l'équipe à maintenir une balance favorable, malgré un nombre moins élevé de buts marqués. Cette performance met en évidence une équipe marocaine résiliente et stratégiquement axée sur la défense.</p>
       </div>
+    </div>
 
+    <div class="viz2-legend-container">
+      <div class="viz2-legend"></div>
+    </div>
 
+    <div class="viz2-main">
+      <div class="viz2-container">
+        <div class="viz2-graph" id="viz2-bar-chart">
+          <svg class="viz2-main-svg"></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-container">
+      <div>
+        <h2 class="markdown-title">Quelles étaient les Forces et Faiblesses du Maroc&nbsp;?</h2>
+      </div>
+      <div>
+        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous pouvons remarquer que le Maroc se démarque en moyenne face à ses adversaires en termes de possession de balle, de duels aériens gagnés et de passes réussies.</p>
+      </div>
+      <div class="viz5-container"></div>
+    </div>
+
+    <div class="page-container">
+      <div class="viz6-tooltip" style="opacity:0;"></div>
+      <div>
+        <h2 class="markdown-title">Qui Sont les Joueurs ayant le Plus Contribué Offensivement&nbsp;?</h2>
+      </div>
+      <div>
+        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous pouvons facilement observer quels joueurs ont été les moteurs de l'attaque marocaine lors de la Coupe du Monde. Nous en déduisons que Hakim Ziyech, Achraf Hakimi et Azzedine Ounahi sont les joueurs ayant contribué le plus offensivement.</p>
+      </div>
       <div class="viz6-container"></div>
+    </div>
+
+    <div class="page-container">
+      <div>
+        <h2 class="markdown-title">Qui ont été les Buteurs les Plus Efficaces&nbsp;?</h2>
+      </div>
+      <div>
+        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En-Nesyri s'est distingué comme le buteur le plus prolifique, ayant marqué deux buts sur neuf tentatives, démontrant une précision clé pour l'équipe. Ziyech, malgré une activité offensive élevée, n'a réussi à convertir qu'une seule en but. Par ailleurs, Aboukhlal, Saïss et Dari ont tous marqué un but, dont Saïss et Dari ayant démontré une efficacité exceptionnelle en marquant sur leur unique tentative. Ces performances soulignent la capacité du Maroc à marquer dans des moments cruciaux, indépendamment du volume total de tirs.</p>
+      </div>
+      <div class="viz7-container"></div>
     </div>
 
   </main>
