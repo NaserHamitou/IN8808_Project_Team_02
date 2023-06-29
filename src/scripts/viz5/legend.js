@@ -13,6 +13,7 @@ export function drawLegend () {
     .attr('class', 'legend-container')
     .style('text-align', 'center')
     .style('margin-top', '20px')
+    .style('margin-bottom', '20px')
 
   const legend = legendContainer.append('svg')
     .attr('class', 'legend-svg')
@@ -39,6 +40,8 @@ export function drawLegend () {
     })
 
   legendItems.append('text')
+  .attr('font-family', 'Roboto Slab')
+  .attr('font-size', '12px')
     .attr('x', 24)
     .attr('y', 30)
     .text(function (d) {
