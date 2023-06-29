@@ -22,7 +22,7 @@ export function build () {
         Cmp: parseFloat(d['Cmp%'].replace(',', '.'))
       }))
 
-      const margin = { top: 70, right: 100, bottom: 35, left: 350 }
+      const margin = { top: 70, right: 100, bottom: 35, left: 400 }
       const width = 500
       const height = 400
 
